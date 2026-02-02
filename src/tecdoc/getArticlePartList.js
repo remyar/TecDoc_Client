@@ -4,9 +4,14 @@ export default async function (params = {}) {
     return new Promise(async (resolve, reject) => {
         try {
             let result = await api.post({
-                getAmBrands: {
+                getArticlePartList: {
                     "articleCountry": params?.articleCountry || "FR",
+                    "articleId": params?.articleId,
+                    "articleLinkId": params?.articleLinkId,
                     "lang": params?.lang || "FR",
+                    "linkingTargetId": params?.linkingTargetId,
+                    "linkingTargetType": params?.linkingTargetType || "",
+                    "priceDate": params?.priceDate,
                     "provider": params?.provider ? params?.provider : process.env.TECDOC_PROVIDER_ID
                 }
             });

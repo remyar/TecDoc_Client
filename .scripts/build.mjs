@@ -22,6 +22,7 @@ console.log(chalk.blue('Building js'))
 await $`cross-env NODE_ENV=production rollup -c`
 
 console.log(chalk.blue(`Compiling 'lib' js files`))
+
 // build files used for overrides
 await $`cross-env NODE_ENV=production RBC_CJS_BUILD=true babel src --out-dir lib`
 

@@ -7,7 +7,11 @@ export default async function (params = {}) {
                 getAmBrands: {
                     "articleCountry": params?.articleCountry || "FR",
                     "lang": params?.lang || "FR",
-                    "provider": params?.provider ? params?.provider : process.env.TECDOC_PROVIDER_ID
+                    "provider": params?.provider ? params?.provider : process.env.TECDOC_PROVIDER_ID,
+                    "includeAll": params?.includeAll || false,
+                    "includeAddressDetails": params?.includeAddressDetails || false,
+                    "includeDataSupplierStatus": params?.includeDataSupplierStatus || false,
+                    "includeDataSupplierLogo": params?.includeDataSupplierLogo || false
                 }
             });
             resolve(result);

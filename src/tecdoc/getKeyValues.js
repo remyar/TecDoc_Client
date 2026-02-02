@@ -4,8 +4,8 @@ export default async function (params = {}) {
     return new Promise(async (resolve, reject) => {
         try {
             let result = await api.post({
-                getAmBrands: {
-                    "articleCountry": params?.articleCountry || "FR",
+                getKeyValues: {
+                    "keyTableId": params?.keyTableId,
                     "lang": params?.lang || "FR",
                     "provider": params?.provider ? params?.provider : process.env.TECDOC_PROVIDER_ID
                 }
